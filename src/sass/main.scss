@@ -1,0 +1,23 @@
+$fa-font-path: "../../node_modules/@fortawesome/fontawesome-free/webfonts/";
+
+$blue:    #007bff !default;
+$indigo:  #674eec !default;
+$purple:  #8445f7 !default;
+$pink:    #ff4169 !default;
+$red:     #c4183c !default;
+$orange:  #fb7906 !default;
+$yellow:  #ffb400 !default;
+$green:   #17c671 !default;
+$teal:    #1adba2 !default;
+$cyan:    #00b8d8 !default;
+
+
+@import "variables";
+@import "custom";
+
+@import "../../node_modules/shards-ui/src/scss/shards.scss";
+@import "../../node_modules/shards-ui/src/extras/scss/agency-landing";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";

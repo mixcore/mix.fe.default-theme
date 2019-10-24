@@ -1,0 +1,8 @@
+.shards-landing-page--1 .welcome {
+  &:before {
+    background-color: black !important;
+    opacity: 0.5 !important;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  }
+}
