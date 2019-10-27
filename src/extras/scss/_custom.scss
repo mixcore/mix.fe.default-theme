@@ -1,0 +1,32 @@
+.shards-landing-page--1 .welcome {
+  &:before {
+    background-color: black !important;
+    opacity: 0.5 !important;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  }
+}
+
+.navbar-light {
+  .navbar-brand {
+    img {
+      filter: brightness(0) sepia(1) hue-rotate(140deg) saturate(6);
+    }
+  }
+}
+
+.lang-switcher {
+  .flag-icon {
+    margin-right: 5px;
+  }
+  .nav-link {
+    padding-left: 15px !important;
+  }
+  &:before {
+    content: "|";
+    position: absolute;
+    color: $gray-500;
+    padding-right: 20px;
+    padding-top: 10px;
+  }
+}

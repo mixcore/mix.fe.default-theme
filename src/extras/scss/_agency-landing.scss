@@ -1,0 +1,150 @@
+$flag-icon-css-path: '../../../node_modules/flag-icon-css/flags' !default;
+@import "../../../node_modules/flag-icon-css/sass/flag-icon.scss";
+
+// Landing page styles.
+.shards-landing-page--1 {
+  // Welcome section
+  // Sets up the background cover image and the overlay gradient.
+  .welcome {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    background: url("../images/agency-landing/2927262.jpg") no-repeat center center fixed;
+    background-size: cover;
+
+    #particles-js {
+      top: 0;
+      left: 0;
+    }
+
+    &:before {
+      position: absolute;
+      z-index: 0;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.5;
+      background: $black;
+    }
+
+    @include media-breakpoint-down(sm) {
+      .inner-wrapper {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .welcome-heading {
+        font-size: 2.415rem;
+      }
+    }
+  }
+
+  .blog-header {
+    position: relative;
+    // height: 100vh;
+    min-height: 400px;
+    background: url("../images/agency-landing/2927262.jpg") no-repeat center center fixed;
+    background-size: cover;
+
+    #particles-js {
+      top: 0;
+      left: 0;
+    }
+
+    &:before {
+      position: absolute;
+      z-index: 0;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.5;
+      background: $black;
+    }
+
+    @include media-breakpoint-down(sm) {
+      .inner-wrapper {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .welcome-heading {
+        font-size: 2.415rem;
+      }
+    }
+  }
+
+  .navbar-light {
+    .navbar-brand {
+      img {
+        filter: brightness(0) sepia(1) hue-rotate(140deg) saturate(6);
+      }
+    }
+  }
+
+  .lang-switcher {
+    .flag-icon {
+      margin-right: 5px;
+    }
+    .nav-link {
+      padding-left: 15px !important;
+    }
+    &:before {
+      content: "|";
+      position: absolute;
+      color: $gray-500;
+      padding-right: 20px;
+      padding-top: 10px;
+    }
+  }
+
+  // Custom section title styling.
+  // Adds the small border at the bottom of each section title.
+  .section-title {
+    position: relative;
+    &:after {
+      content: "";
+      width: 30px;
+      height: 2px;
+      background: theme-color("primary");
+      position: absolute;
+      left: 50%;
+      margin-left: -15px;
+      bottom: -20px;
+    }
+  }
+
+  // Features
+  .feature {
+    .icon {
+      border-radius: 50%;
+      min-width: 65px;
+      height: 65px;
+      line-height: 65px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(#212529, 0.1), 0 7px 14px rgba(#212529, 0.1);
+      font-size: 27px;
+    }
+  }
+
+  // Better separation between sections.
+  .section {
+    border-bottom: 1px solid lighten($blueish-grey, 54);
+  }
+
+  // Add a different tint to some sections.
+  .section-invert {
+    background: #f9fafc;
+  }
+
+  // Testimonials Section
+  .testimonials .avatar {
+    max-width: 80px;
+    overflow: hidden;
+  }
+}
