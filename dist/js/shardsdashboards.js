@@ -60,101 +60,95 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 6:
-/***/ (function(module, exports) {
+/***/ 5:
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+* Shards Dashboards v1.1.0
+* Copyright 2011-2018 DesignRevision
+* SEE LICENSE FILE
+*/
+(function (global, factory) {
+	 true ? factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(factory());
+}(this, (function () { 'use strict';
+
+if (typeof Chart === 'undefined') {
+  throw new Error('Shards Dashboard requires the Chart.js library in order to function properly.');
+}
+
+window.ShardsDashboards = window.ShardsDashboards ? window.ShardsDashboards : {};
+
+$.extend($.easing, {
+  easeOutSine: function easeOutSine(x, t, b, c, d) {
+    return c * Math.sin(t / d * (Math.PI / 2)) + b;
+  }
+});
 
 /**
- * Shards — Main demo page script.
+ * Chart.js - Line Chart with Vertical Line
  */
+Chart.defaults.LineWithLine = Chart.defaults.line;
+Chart.controllers.LineWithLine = Chart.controllers.line.extend({
+  draw: function draw(ease) {
+    Chart.controllers.line.prototype.draw.call(this, ease);
+    if (this.chart.tooltip._active && this.chart.tooltip._active.length) {
+      var activePoint = this.chart.tooltip._active[0],
+          ctx = this.chart.ctx,
+          x = activePoint.tooltipPosition().x,
+          topY = this.chart.scales['y-axis-0'].top,
+          bottomY = this.chart.scales['y-axis-0'].bottom;
 
-// Main demo script.
-(function ($) {
-  $(document).ready(function() {
+      // Draw the line
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(x, topY);
+      ctx.lineTo(x, bottomY);
+      ctx.lineWidth = 0.5;
+      ctx.strokeStyle = '#ddd';
+      ctx.stroke();
+      ctx.restore();
+    }
+  }
+});
 
-    // Hide the loader and show the elements.
-    setTimeout(function () {
-      $('.loader').addClass('hidden').delay(200).remove();
-      $('.slide-in').each(function() {
-        $(this).addClass('visible');
-      });
-    }, 1900);
+$(document).ready(function () {
 
-    // Enable popovers everywhere.
-    $('[data-toggle="popover"]').popover();
+  /**
+   * Dropdown adjustments
+   */
 
-    // Enable tooltips everywhere.
-    $('[data-toggle="tooltip"]').tooltip();
+  var slideConfig = {
+    duration: 270,
+    easing: 'easeOutSine'
+  };
 
-    // Disable example anchors scroll to top action.
-    $('.example a').click(function(event) {
-        event.target.getAttribute('href') === '#' && event.preventDefault();
-    });
-
-    // Hook the "Learn More" button event to scroll to content.
-    $('#scroll-to-content').click(function(ev) {
-      ev.preventDefault();
-      if (typeof ev.target.dataset.scrollTo === 'undefined') {
-        return;
-      }
-
-      $('html, body').animate({
-        scrollTop: $(ev.target.dataset.scrollTo).offset().top - 100
-      }, 1000)
-    });
-
-    //
-    // Setup examples.
-    //
-
-    // Slider example 1.
-    $('#slider-example-1').customSlider({
-      start: [20, 80],
-      range: {
-        min: 0,
-        max: 100
-      },
-      connect: true
-    });
-
-    // Slider example 2.
-    $('#slider-example-2').customSlider({
-      start: [20, 80],
-      range: {
-        min: 0,
-        max: 100
-      },
-      connect: true,
-      tooltips: true
-    });
-
-    // Slider example 3.
-    $('#slider-example-3').customSlider({
-      start: [20, 80],
-      range: {
-        min: 0,
-        max: 100
-      },
-      connect: true,
-      tooltips: true,
-      pips: {
-        mode: 'positions',
-        values: [0, 25, 50, 75, 100],
-        density: 5
-      }
-    });
-
-    // Datepicker example 1.
-    $('#datepicker-example-1').datepicker({});
-
-    // Datepicker example 2.
-    $('#datepicker-example-2').datepicker({});
+  // Add dropdown animations when toggled.
+  $(':not(.main-sidebar--icons-only) .dropdown').on('show.bs.dropdown', function () {
+    $(this).find('.dropdown-menu').first().stop(true, true).slideDown(slideConfig);
   });
-})(jQuery);
+
+  $(':not(.main-sidebar--icons-only) .dropdown').on('hide.bs.dropdown', function () {
+    $(this).find('.dropdown-menu').first().stop(true, true).slideUp(slideConfig);
+  });
+
+  /**
+   * Sidebar toggles
+   */
+  $('.toggle-sidebar').click(function (e) {
+    $('.main-sidebar').toggleClass('open');
+  });
+});
+
+})));
+
+//# sourceMappingURL=shards-dashboards.1.1.0.js.map
 
 
 /***/ })

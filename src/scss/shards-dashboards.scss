@@ -1,0 +1,55 @@
+/*
+ * Shards Dashboard Lite UI Kit v1.1.0
+ * Project URL: https://designrevision.com/downloads/shards-dashboard-lite
+ * Based on: Shards UI Kit v2.1.0 (https://designrevision.com/downloads/shards)
+ * Based on: Bootstrap v4.1.3 (https://getbootstrap.com)
+ * Copyright 2017-* DesignRevision (https://designrevision.com)
+ * Copyright 2017-* Catalin Vasile (contact@catalin.me)
+ * License: MIT
+ */
+
+// Shards variables overrides.
+@import "dashboards/overrides";
+
+// Base Shards UI Kit
+@import "shards";
+
+/* Shards Dashboards Lite Styles */
+
+// Core
+@import "dashboards/variables";
+
+// Components
+@import "dashboards/reboot";
+@import "dashboards/buttons";
+@import "dashboards/button-group";
+@import "dashboards/navbar";
+@import "dashboards/badge";
+@import "dashboards/alert";
+@import "dashboards/input-group";
+@import "dashboards/custom-forms";
+@import "dashboards/custom-sliders";
+@import "dashboards/images";
+@import "dashboards/icons";
+@import "dashboards/dropdown";
+@import "dashboards/card";
+@import "dashboards/utilities";
+
+// Blocks
+@import "dashboards/blocks/main-navbar";
+@import "dashboards/blocks/main-sidebar";
+@import "dashboards/blocks/main-content";
+@import "dashboards/blocks/main-footer";
+@import "dashboards/blocks/page-header";
+
+// Templates
+@import "dashboards/templates/common"; // Required common styles for all pages.
+@import "dashboards/templates/blog-overview";
+@import "dashboards/templates/blog-add-new-post";
+
+// Plugins
+@import "dashboards/plugins/quill";
+
+// Components
+@import "dashboards/components/card-post";
+@import "dashboards/components/error";
