@@ -32,7 +32,7 @@
 
     "css-compile:dashboards": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/scss/shards-dashboards.scss dist/css/shards-dashboards.css",
     "css-minify:dashboards": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/css/shards-dashboards.min.css dist/css/shards-dashboards.css",
-    "js-minify:dashboards": "uglifyjs --compress --mangle --output dist/js/shardsdashboards.min.js dist/js/shardsdashboards.js"
+    "js-minify:dashboards": "uglifyjs --compress --mangle --output dist/js/shards-dashboards.min.js dist/js/shardsDashboards.js"
   },
   "bundlesize": [
     {
