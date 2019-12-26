@@ -98,7 +98,14 @@
                 <span>Errors</span>
               </a>
             </li>
+            <li class="nav-item">
+              <div class="custom-controlx custom-switch">
+                <input type="checkbox" class="custom-control-inputx" id="darkSwitch" />
+                <label class="custom-control-labelx" for="darkSwitch">Dark Mode</label>
+              </div>
+            </li>
           </ul>
+
         </div>
       </aside>
       <!-- End Main Sidebar -->
@@ -322,6 +329,37 @@
   <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
   <script src="js/shards-dashboards.min.js"></script>
+
+
+  <script>
+    $(document).ready(function () {
+      var darkSwitch = document.getElementById("darkSwitch");
+      if (darkSwitch) {
+        initTheme();
+        darkSwitch.addEventListener("change", function (event) {
+          resetTheme();
+        });
+        function initTheme() {
+          var darkThemeSelected =
+            localStorage.getItem("darkSwitch") !== null &&
+            localStorage.getItem("darkSwitch") === "dark";
+          darkSwitch.checked = darkThemeSelected;
+          darkThemeSelected
+            ? document.body.setAttribute("data-theme", "dark")
+            : document.body.removeAttribute("data-theme");
+        }
+        function resetTheme() {
+          if (darkSwitch.checked) {
+            document.body.setAttribute("data-theme", "dark");
+            localStorage.setItem("darkSwitch", "dark");
+          } else {
+            document.body.removeAttribute("data-theme");
+            localStorage.removeItem("darkSwitch");
+          }
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>

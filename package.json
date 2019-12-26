@@ -29,7 +29,6 @@
     "watch-images": "nodemon --ignore src/js --ignore src/scss --ignore src/extras/js --ignore src/extras/scss --ignore dist/ -e jpg,jpeg,png -x \"npm run copy-images\"",
     "watch-js": "nodemon --ignore src/scss --ignore dist/ -e js -x \"npm run js\"",
     "bundlesize": "bundlesize",
-
     "css-compile:dashboards": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/scss/shards-dashboards.scss dist/css/shards-dashboards.css",
     "css-minify:dashboards": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/css/shards-dashboards.min.css dist/css/shards-dashboards.css",
     "js-minify:dashboards": "uglifyjs --compress --mangle --output dist/js/shards-dashboards.min.js dist/js/shardsDashboards.js"
@@ -76,6 +75,7 @@
   },
   "dependencies": {
     "bootstrap": "4.3.1",
+    "dark-mode-switch": "^1.0.0",
     "flag-icon-css": "^3.4.5"
   }
 }
