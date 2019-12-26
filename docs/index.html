@@ -13,6 +13,8 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/shards.min.css?v=3.0.0">
   <link rel="stylesheet" href="css/shards-extras.min.css?version=3.0.0">
@@ -32,8 +34,9 @@
           <img src="images/agency-landing/shards-logo-white.svg" class="mr-2" alt="Shards - Agency Landing Page">
           Mix Agency
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler sidebar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -86,6 +89,67 @@
         </div>
       </nav>
       <!-- / Navigation -->
+      <div class="sidebar">
+        <div class="close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="#ffffff"
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+            </path>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+          </svg>
+        </div>
+        <a class="sidebar-brand" href="#">
+          <img class="sidebar-brand-logo" src="images/shards-dashboards-logo.svg"
+            alt="Shards Pro - Overlayed Hero 1 - The Desert">
+        </a>
+        <ul class="main-items">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+        <ul class="sub-items">
+          <li>
+            <a href="#">Terms &amp; Conditions</a>
+          </li>
+          <li>
+            <a href="#">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+        <ul class="social-items">
+          <li>
+            <a href="#" class="text-black">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-black">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-black">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-black">
+              <i class="fab fa-dribbble"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div> <!-- .container -->
 
     <!-- Inner Wrapper -->
@@ -111,7 +175,7 @@
       <div class="container">
         <div class="row">
           <div class="feature py-4 col-md-6 d-flex">
-            <div class="icon text-primary mr-3"><i class="fa fa-paint-brush"></i></div>
+            <div class="icon text-primary mr-3"><i class="material-icons">face</i></div>
             <div class="px-4">
               <h5>Design & Branding</h5>
               <p>Quisque mollis mi ac aliquet accumsan. Sed sed dapibus libero. Nullam luctus purus duis sensibus
@@ -327,6 +391,116 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 
+  <script>
+    $(document).ready(function () {
+      var a = $(window),
+        r = $("body"),
+        s = $(".sidebar"),
+        i = $(".navbar");
+
+      function e(e) {
+        e.preventDefault(), e.stopPropagation();
+        var t = "sidebar-visible";
+        s.hasClass("sidebar--left") && (t = "sidebar-visible-left"), r.toggleClass(t), r.addClass("sidebar-transition"), setTimeout(function () {
+          r.removeClass("sidebar-transition")
+        }, 350)
+      }
+      if ($(".sidebar-toggler").click(e), s.find(".close").click(e), i.length && i.hasClass("shards-navbar--sticky")) {
+        var t = i.data("navbar-sticky-shadow-size") || "large",
+          o = i.data("navbar-sticky-shadow-weight") || "2",
+          n = "box-shadow-" + t + "--" + o;
+        "none" !== t && "none" !== o || (n = "");
+        var l = i.outerHeight(),
+          d = "sr-sticky-header-placeholder",
+          c = '<div class="' + d + '" style="display: block; height: ' + l + 'px"></div>';
+        $(window).scroll(throttle(function () {
+          ! function (e, t) {
+            if (1 < a.scrollTop()) return i.addClass("persistent " + e), $("." + d).length || i.after(t);
+            i.removeClass("persistent " + e), $("." + d).remove()
+          }(n, c)
+        }, 200))
+      }
+      if (i.hasClass("shards-navbar--slide")) {
+        var u = i.data("slide-timeout") || 500;
+        setTimeout(function () {
+          i.addClass("shards-navbar--slide-visible")
+        }, u)
+      }
+      $(".play-button").on("click", function () {
+        var e = $(this).parent(".media-element-wrapper"),
+          t = e.data("videoid");
+        if (t) {
+          e.addClass("media-element-wrapper--loaded");
+          var a = document.createElement("iframe");
+          a.setAttribute("frameborder", "0"), a.setAttribute("allowfullscreen", ""), a.setAttribute("src", "https://www.youtube.com/embed/" + t + "?rel=0&showinfo=0&autoplay=1"), this.innerHTML = "", e.append(a)
+        }
+      });
+      // var h = $(".owl-carousel");
+      // h.length && h.each(function () {
+      //   var e = $(this).data("owl-carousel-size") || "1",
+      //     t = Boolean($(this).data("owl-carousel-dots")),
+      //     a = Boolean($(this).data("owl-carousel-nav")),
+      //     r = $(this).data("owl-carousel-margin"),
+      //     s = Boolean($(this).data("owl-carousel-loop")),
+      //     i = Boolean($(this).data("owl-carousel-autoplay")),
+      //     o = Boolean($(this).data("owl-carousel-rewind")) || !0,
+      //     n = {
+      //       items: e,
+      //       responsive: {
+      //         980: {
+      //           items: e
+      //         },
+      //         0: {
+      //           items: 1,
+      //           nav: !1,
+      //           dots: !1
+      //         }
+      //       }
+      //     };
+      //   t && (n.dots = t), a && (n.nav = a), r && (n.margin = parseFloat(r)), s && (n.loop = s), i && (n.autoplay = i), o && (n.rewind = o), $(this).owlCarousel(n)
+      // });
+      // var p = $(".shards-gallery");
+      // p.length && p.each(function () {
+      //   $(this).magnificPopup({
+      //     delegate: ".shards-gallery__image",
+      //     type: "image",
+      //     gallery: {
+      //       enabled: !0
+      //     }
+      //   })
+      // });
+      // var v = $(".shards-counter");
+      // v.length && window.ProgressBar && v.each(function () {
+      //   if ($(this).hasClass("shards-counter--progress")) {
+      //     var o = $(this).data("counter-type") || "circle",
+      //       n = $(this).data("counter-color"),
+      //       l = $(this).data("counter-stroke-width"),
+      //       d = $(this).data("counter-trail-width"),
+      //       c = $(this).data("counter-trail-color"),
+      //       u = $(this).data("counter-easing"),
+      //       h = $(this).data("counter-fill"),
+      //       p = $(this).data("counter-duration"),
+      //       e = ["Circle", "SemiCircle", "Line"],
+      //       v = upFirst(snakeToCamel(o));
+      //     if (-1 === e.indexO$(v)) throw new Error("Shards Pro: The `counter-type` must be either: " + e.join(", ") + "!");
+      //     $(this).find(".counter-item").each(function (e) {
+      //       var t = "sc-progress--" + e,
+      //         a = $(this).find(".counter-item__container");
+      //       a.attr("id", t), a.addClass("counter-item__type-" + o);
+      //       var r = Number($(this).data("counter-value") || "0"),
+      //         s = $(this).data("counter-text-value") || "0",
+      //         i = {};
+      //       n && (i.color = n), l && (i.strokeWidth = Number(l)), d && (i.trailWidth = Number(d)), c && (i.trailColor = c), h && (i.fill = h), u && (i.easing = u), p && (i.duration = Number(p)), i.text = {
+      //         value: s
+      //       }, i.step = function (e, t) {
+      //         var a = Math.round(100 * t.value());
+      //         0 === a ? t.setText("") : t.setText(a)
+      //       }, new ProgressBar[v]("#" + t, i).animate(r)
+      //     })
+      //   }
+      // })
+    })
+  </script>
   <script>
     particlesJS('particles-js',
       {

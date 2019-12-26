@@ -46,6 +46,9 @@ body {
   font-weight: 300;
   color: #5A6169;
   background-color: #fff;
+  transition: -webkit-transform 350ms cubic-bezier(0.5, 0.63, 0.18, 0.98);
+  transition: transform 350ms cubic-bezier(0.5, 0.63, 0.18, 0.98);
+  transition: transform 350ms cubic-bezier(0.5, 0.63, 0.18, 0.98), -webkit-transform 350ms cubic-bezier(0.5, 0.63, 0.18, 0.98);
 }
 
 a {
@@ -5129,5 +5132,130 @@ a.text-black:hover, a.text-black:focus {
 
 .with-shadows {
   box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+}
+
+body.sidebar-transition, body.sidebar-visible, body.sidebar-visible-left {
+  overflow: hidden;
+}
+
+body.sidebar-visible {
+  -webkit-transform: translateX(-280px);
+          transform: translateX(-280px);
+}
+
+body.sidebar-visible-left {
+  -webkit-transform: translateX(280px);
+          transform: translateX(280px);
+}
+
+.sidebar-toggler:hover {
+  cursor: pointer;
+}
+
+.adi {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  left: 0;
+}
+
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  padding: 40px;
+  overflow-y: auto;
+  z-index: 10000;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  border-left: 1px solid #ddd;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 40px 0 0 0;
+  padding: 0;
+}
+
+.sidebar ul a {
+  transition: opacity 250ms ease-in-out;
+  color: #000;
+}
+
+.sidebar ul a:hover {
+  text-decoration: none;
+  opacity: 0.6;
+}
+
+.sidebar li {
+  margin: 12px 0;
+}
+
+.sidebar .close {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 15px;
+  right: 15px;
+  opacity: 1;
+  border-radius: 50%;
+  background: #ddd;
+}
+
+.sidebar .close svg {
+  opacity: 1;
+  max-width: 17px;
+  max-height: 17px;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.sidebar .sidebar-brand {
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.sidebar .sidebar-brand .sidebar-brand-logo {
+  margin-right: 15px;
+  width: 50px;
+}
+
+.sidebar .adj {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: 500;
+}
+
+.sidebar .main-items li {
+  font-size: 22px;
+}
+
+.sidebar .sub-items li {
+  font-size: 13px;
+}
+
+.sidebar .sub-items a {
+  opacity: 0.5;
+}
+
+.sidebar .social-items li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.sidebar .social-items li a {
+  opacity: 0.3;
+}
+
+.sidebar .social-items li a:hover {
+  color: #000;
+  opacity: 0.6;
 }
 /*# sourceMappingURL=shards.css.map */
