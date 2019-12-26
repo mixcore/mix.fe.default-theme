@@ -57,12 +57,6 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="pwa-fullscreen.html">
-                <i class="material-icons">vertical_split</i>
-                <span>Full screen</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link " href="pwa-components-blog-posts.html">
                 <i class="material-icons">edit</i>
                 <span>Blog Posts</span>
@@ -191,125 +185,89 @@
           </nav>
         </div>
         <!-- / .main-navbar -->
-        <div class="main-content-container container-fluid px-4">
-          <!-- Page Header -->
-          <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-              <span class="text-uppercase page-subtitle">WELCOME TO</span>
-              <h3 class="page-title">Mixcore App</h3>
-            </div>
-          </div>
-          <!-- End Page Header -->
-
-          <!-- Small Stats Blocks -->
-          <div class="row">
-            <div class="col-lg col-md-6 col-sm-6 mb-4">
-              <div class="stats-small stats-small--1 card card-small">
-                <div class="card-body p-0 d-flex">
-                  <div class="d-flex flex-column m-auto">
-                    <div class="stats-small__data text-center">
-                      <span class="stats-small__label text-uppercase">Posts</span>
-                      <h6 class="stats-small__value count my-3">2,390</h6>
-                    </div>
-                    <div class="stats-small__data">
-                      <span class="stats-small__percentage stats-small__percentage--increase">4.7%</span>
-                    </div>
-                  </div>
-                  <canvas height="120" class="blog-overview-stats-small-1"></canvas>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg col-md-6 col-sm-6 mb-4">
-              <div class="stats-small stats-small--1 card card-small">
-                <div class="card-body p-0 d-flex">
-                  <div class="d-flex flex-column m-auto">
-                    <div class="stats-small__data text-center">
-                      <span class="stats-small__label text-uppercase">Pages</span>
-                      <h6 class="stats-small__value count my-3">182</h6>
-                    </div>
-                    <div class="stats-small__data">
-                      <span class="stats-small__percentage stats-small__percentage--increase">12.4%</span>
-                    </div>
-                  </div>
-                  <canvas height="120" class="blog-overview-stats-small-2"></canvas>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg col-md-4 col-sm-6 mb-4">
-              <div class="stats-small stats-small--1 card card-small">
-                <div class="card-body p-0 d-flex">
-                  <div class="d-flex flex-column m-auto">
-                    <div class="stats-small__data text-center">
-                      <span class="stats-small__label text-uppercase">Comments</span>
-                      <h6 class="stats-small__value count my-3">8,147</h6>
-                    </div>
-                    <div class="stats-small__data">
-                      <span class="stats-small__percentage stats-small__percentage--decrease">3.8%</span>
-                    </div>
-                  </div>
-                  <canvas height="120" class="blog-overview-stats-small-3"></canvas>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg col-md-4 col-sm-6 mb-4">
-              <div class="stats-small stats-small--1 card card-small">
-                <div class="card-body p-0 d-flex">
-                  <div class="d-flex flex-column m-auto">
-                    <div class="stats-small__data text-center">
-                      <span class="stats-small__label text-uppercase">Users</span>
-                      <h6 class="stats-small__value count my-3">2,413</h6>
-                    </div>
-                    <div class="stats-small__data">
-                      <span class="stats-small__percentage stats-small__percentage--increase">12.4%</span>
-                    </div>
-                  </div>
-                  <canvas height="120" class="blog-overview-stats-small-4"></canvas>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg col-md-4 col-sm-12 mb-4">
-              <div class="stats-small stats-small--1 card card-small">
-                <div class="card-body p-0 d-flex">
-                  <div class="d-flex flex-column m-auto">
-                    <div class="stats-small__data text-center">
-                      <span class="stats-small__label text-uppercase">Subscribers</span>
-                      <h6 class="stats-small__value count my-3">17,281</h6>
-                    </div>
-                    <div class="stats-small__data">
-                      <span class="stats-small__percentage stats-small__percentage--decrease">2.4%</span>
-                    </div>
-                  </div>
-                  <canvas height="120" class="blog-overview-stats-small-5"></canvas>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="main-content-container-fullscreen container-fluid p-0">
+          <div id="map"></div>
+          <button id="getMyLocation" class="btn btn-secondary" onclick="getLocation()">
+            <i class="fa fa-location-arrow" aria-hidden="true"></i>
+          </button>
+          <!-- <iframe width="100%" height="100%" frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ0T2NLikpdTERKxE8d61aX_E&key=AIzaSyDrrcRQJxv6-3NWnI-4oAWXGykUncUjDAU"
+            allowfullscreen></iframe> -->
         </div>
-        <footer class="main-footer d-flex p-2 px-3 bg-white border-top">
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-          </ul>
-          <span class="copyright ml-auto my-auto mr-2">Powered by
-            <a href="https://mixcore.org">Mixcore CMS</a>
-          </span>
-        </footer>
       </main>
     </div>
   </div>
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+    #getMyLocation {
+      position: fixed;
+      right: 15px;
+      bottom: 15px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    #map {
+      width: 100%;
+      height: calc(100vh - 3.75rem);
+      /* position:  !important; */
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrrcRQJxv6-3NWnI-4oAWXGykUncUjDAU&callback=initMap"
+    async defer></script>
+  <script>
+    var map;
+    var currentLocation = getLocation();
+    var hcm;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: hcm,
+        zoom: 8,
+        zoomControl: false,
+        fullscreenControl: false,
+        mapTypeControl: false,
+        streetViewControl: false
+      });
+      // var marker = new google.maps.Marker({ position: hcm, map: map });
+    }
+
+    function getLocation() {
+      if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          console.log(position.coords);
+
+          hcm = { lat: position.coords.latitude, lng: position.coords.longitude };
+          map.setCenter(hcm);
+
+          // map = new google.maps.Map(document.getElementById('map'), {
+          //   center: { lat: position.coords.latitude, lng: position.coords.longitude },
+          //   zoom: 8,
+          //   zoomControl: false,
+          //   fullscreenControl: false,
+          //   mapTypeControl: false,
+          //   streetViewControl: false
+          // });
+          var marker = new google.maps.Marker({ position: hcm, map: map });
+
+          return position;
+        })
+      }
+      else {
+        console.info("geolocation is not supported in this environment");
+      }
+    }
+  </script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"

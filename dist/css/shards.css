@@ -5233,28 +5233,28 @@ body.sidebar-visible-left {
   font-weight: 500;
 }
 
-.sidebar .av li {
+.sidebar .main-items li {
   font-size: 22px;
 }
 
-.sidebar .aw li {
+.sidebar .sub-items li {
   font-size: 13px;
 }
 
-.sidebar .aw a {
+.sidebar .sub-items a {
   opacity: 0.5;
 }
 
-.sidebar .ax li {
+.sidebar .social-items li {
   display: inline-block;
   margin-right: 10px;
 }
 
-.sidebar .ax li a {
+.sidebar .social-items li a {
   opacity: 0.3;
 }
 
-.sidebar .ax li a:hover {
+.sidebar .social-items li a:hover {
   color: #000;
   opacity: 0.6;
 }

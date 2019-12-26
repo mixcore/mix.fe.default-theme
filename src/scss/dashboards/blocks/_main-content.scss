@@ -1,5 +1,9 @@
 // Main content adjustments
 
+
+.main-content > .main-content-container-fullscreen.container-fluid {
+  min-height: calc(100vh - #{$main-navbar-height});
+}
 .main-content > .main-content-container.container-fluid {
   min-height: calc(100vh - #{$main-navbar-height + $main-footer-height});
 }
